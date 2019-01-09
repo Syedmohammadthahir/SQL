@@ -1,0 +1,32 @@
+
+
+
+ID - name - price 
+
+
+
+CREATE TABLE products (
+
+id INT NOT NULL,
+name STRING,
+price MONEY,
+PRIMARY KEY (id)
+
+)
+
+
+INSERT INTO products
+
+VALUES (1, "Thahir", 40)
+
+
+
+
+INSERT INTO products (id, name)
+VALUES (2, "Syed")
+
+
+Create
+Read
+Update
+Delete or Destroy
