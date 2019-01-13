@@ -1,0 +1,182 @@
+                                 
+
+                                 SQL - Structured Query Language
+
+Database:
+database and its DBMS conform to the principles of a particular database model.
+
+----------- see quel ----------
+
+DBMS: Database Management System 
+
+
+
+
+
+Database Management System (DBMS) is a collection of programs which enables its users to access database, manipulate data, reporting / representation of  data.
+
+
+
+
+
+
+Navigational database - Relational database - SQl database - Object Oriented database.
+
+
+
+
+insert - search - update - delete database records.
+
+
+
+Example:
+
+
+SELECT population FROM world
+  WHERE name = 'Algeria'
+
+
+Relation DataBase
+
+Query DataBase
+
+
+SQL - 
+
+Create Table - SNIT
+Select - SNIT
+Insert - SNIT (1345545)
+Update - (Update)
+
+
+SELECT user FROM rollnumber
+  WHERE name_id = 'SNIT'
+
+
+
+  *  - 
+
+
+
+  To read data from the database (Read)
+
+  SELECT * FROM 'products';
+
+
+
+  SELECT name, price FROM 'products';
+
+    SELECT * FROM 'products' WHERE id=1
+
+
+
+    ---------------- Update -------
+
+    UPDATE table_name
+    SET column1 = value1, column2 = value2, ...
+    WHERE condition
+
+
+    UPDATE products
+    SET price = 30, name = "", stock = 51
+    WHERE  id=3
+
+
+
+Alter Table - Add column   - add field
+
+
+ALTER TABLE products
+ADD stock INT
+
+
+
+ UPDATE products
+    SET stock = 30
+    WHERE id=3
+
+
+
+
+
+    Delete
+
+
+    DELETE FROM table_name
+    WHERE condition;
+
+DELETE FROM products
+WHERE name = "Ali"
+
+
+DELETE FROM products
+WHERE id = 2
+
+
+
+
+
+
+
+
+
+
+Relationships in SQL
+
+INSERT INTO products
+VALUES (4, "Mohammad", 80, 12)
+
+
+
+CREATE TABLE orders (
+	id INT NOT NULL,
+	order_number INT,
+	customer_id INT,
+	product_id INT,
+	PRIMARY KEY (id),
+	FOREIGN KEY (customer_id) REFERENCES customers(id),
+	FOREIGN KEY (product_id)  REFERENCES products(id)
+)
+
+
+
+
+INSERT INTO orders
+VALUES (1, 449, 2, 1)
+
+
+SELECT orders.order_number, customers.first_name, customers.last_name, customers.address
+FROM orders
+INNER JOIN customers ON orders.customer_id = customers.id
+
+
+
+Create
+Read
+Update
+Destroy
+
+
+
+CREATE TABLE customers (
+
+id INT NOT NULL,
+first_name STRING,
+last_name MONEY,
+address location, 
+PRIMARY KEY (id)
+
+)
+
+
+
+
+INSERT INTO customers
+
+VALUES (1, "snit", "INST", "TPT")
+
+
+
+SELECT orders.order_number, productss.price, products.stock, 
+FROM orders
+INNER JOIN customers ON product_id = products.id
